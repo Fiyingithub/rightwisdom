@@ -20,7 +20,7 @@ $mySurname= $_SESSION['surname'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard</title>
+    <title>Logout</title>
     <!-- <link rel="stylesheet" href="../src/output.css"> -->
     <script src="../../Helpers/Tailwind/tailwind.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -165,106 +165,16 @@ $mySurname= $_SESSION['surname'];
             </div><br class="hidden md:block">
 
             <div class=" md:w-[78vw] w-[100vw] h-[630px] rounded-br-lg rounded-bl-lg md:bg-white pt-2 pl-4" id="mainpage">
-                <div class="md:flex gap-4 ">
-                    <div class="w-[55%] h-[100%]">
+                <div class="mx-[auto] w-[400px] text-center h-[300px] pt-20 shadow-2xl ">
+                    <p>Are you sure you want to <br> <b>Logout</b> </p>
+                    
+                    <div class="flex justify-center mt-20 gap-10 ">
 
-                        <div class="flex gap-10 md:w-[100%] pt-10 h-[250px] shadow- pl-6">
-                            <h1 class="md:font-[600] text-2xl pt-4">Welcome back, <b><?php echo $mySurname; ?>!</b></h1>
-                            <!-- <img class="h-[150px] w-[150px]" src="/asset/books.png" alt="book image"> -->
-                        </div><br class="hidden md:block">
+                        <form action="../../controllers/studentlogout.php" method="post">
+                            <button type="submit" class=" hover:font-[700] hover:text-xl" name="submit">Yes</button>
+                        </form>
 
-                        <div class="md:mt-[20px] -mt-6">
-                            <div class="flex flex-wrap gap-[53px]">
-                                <a href="#">
-                                    <div class="md:w-[180px] w-[92vw] h-[120px] bg-[#F97903] rounded-lg pt-4 hover:shadow transition-ease-in hover:scale-105 ">
-                                        <img class="h-[50px] mx-[auto] w-[50px]" src="../../Helpers/asset/science.png" alt="book image">
-                                        <h1 class="text-center text-white font-[500]">Attendance</h1>
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="md:w-[180px] w-[92vw] h-[120px] bg-[#F97903] rounded-lg pt-[16px] hover:shadow transition-ease-in hover:scale-105 ">
-                                        <img class="h-[48px] mx-[auto] w-[47px]" src="../../Helpers/asset/exam (1).png" alt="book image">
-                                        <h1 class="text-center text-white font-[500]">Class List</h1>
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="md:w-[180px] w-[92vw] h-[120px] bg-[#F97903] rounded-lg pt-[12px] hover:shadow transition-ease-in hover:scale-105 ">
-                                        <img class="h-[50px] mx-[auto] w-[50px]" src="../../Helpers/asset/teared-book.png" alt="book image">
-                                        <h1 class="text-center text-white font-[500]">Subject</h1>
-                                    </div>
-                                </a>
-                                
-                            </div><br><br><br class="hidden md:block">
-
-                            <div class="flex flex-wrap gap-[53px]">
-                                <a href="#">
-                                    <div class="md:w-[180px] w-[92vw] h-[120px] bg-[#F97903] rounded-lg pt-4 hover:shadow transition-ease-in hover:scale-105 ">
-                                        <img class="h-[50px] mx-[auto] w-[50px]" src="../../Helpers/asset/class-timetable.png" alt="book image">
-                                        <h1 class="text-center text-white font-[500]">Timetable</h1>
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="md:w-[180px] w-[92vw] h-[120px] bg-[#F97903] rounded-lg pt-4 hover:shadow transition-ease-in hover:scale-105 ">
-                                        <img class="h-[50px] mx-[auto] w-[50px]" src="../../Helpers/asset/exam.png" alt="book image">
-                                        <h1 class="text-center text-white font-[500]">Exam</h1>
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="md:w-[180px] w-[92vw] h-[120px] bg-[#F97903] rounded-lg pt-4 hover:shadow transition-ease-in hover:scale-105 ">
-                                        <img class="h-[50px] mx-[auto] w-[50px]" src="../../Helpers/asset/score.png" alt="book image">
-                                        <h1 class="text-center text-white font-[500]">Results</h1>
-                                    </div>
-                                </a>
-                                
-                            </div><br class="md:hidden"><br class="md:hidden">
-                        </div>
-                    </div>
-
-                    <div class="md:px-4 pr-4 md:pr-0 pt-4 bg-white rounded-md md:shadow-xl mr-4 h-[100%] md:w-[33vw] w-[100%]">
-                        <h2 class="text-2xl font-bold mb-4">Calendar</h2>
-                        <div id="calendar" class="overflow-x-auto"></div><br>
-
-                        <div class="">
-                            <b>School Activity</b>
-                            <div class="mt-4 ml-8">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-8 h-8 bg-gray-200 rounded-md">
-                                        <img class="w-4 h-6 mx-[auto] pt-1" src="../../Helpers/asset/notification.png" alt="notification">
-                                    </div>
-    
-                                    <div class="">
-                                        <h1 class="text-[15px] font-[500]">Eng- Vocabulary test</h1>
-                                        <p class="text-[13px] text-gray-600">All Wednessdays</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center gap-4 mt-4">
-                                    <div class="w-8 h-8 bg-gray-200 rounded-md">
-                                        <img class="w-4 h-6 mx-[auto] pt-1" src="../../Helpers/asset/notification.png" alt="notification">
-                                    </div>
-    
-                                    <div class="">
-                                        <h1 class="text-[15px] font-[500]">Eng- Essay</h1>
-                                        <p class="text-[13px] text-gray-600">All Fridays</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center gap-4 mt-4">
-                                    <div class="w-8 h-8 bg-gray-200 rounded-md">
-                                        <img class="w-4 h-6 mx-[auto] pt-1" src="../../Helpers/asset/notification.png" alt="notification">
-                                    </div>
-    
-                                    <div class="">
-                                        <h1 class="text-[15px] font-[500]">Eng- Speaking Class</h1>
-                                        <p class="text-[13px] text-gray-600">All Wednessdays</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="../Student/student-dashboard.php" class="hover:font-[700] hover:text-xl">No</a>
                     </div>
                 </div>
                 

@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['surname']))
+{
+    header("location:studentlogin.php");
+}
+
+// $myFirstname = $_SESSION['firstname'];
+$mySurname= $_SESSION['surname'];
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,12 +39,12 @@
             <div class="">
                 <div class="flex gap-2 items-center justify-center">
                     <img class="w-6 h-6" src="../../Helpers/asset/dashboard.png" alt="dashboard-image">
-                    <a href="student-dashboard.html" class="text-3xl font-[500] text-white">Dashboard</a>
+                    <a href="../Student/student-dashboard.php" class="text-3xl font-[500] text-white">Dashboard</a>
                     
                 </div><br>
         
                 <div class="">
-                    <a href="studentprofile.html">
+                    <a href="../Student/studentprofile.php">
                         <div class="flex gap-2 justify-center items-center -ml-8 cursor-pointer">
                             <img class="w-6 h-6" src="../../Helpers/asset/user (3).png" alt="dashboard-image">
                             <p class="text-xl hover:font-[700] hover:text-2xl font-[500] text-white" >Profile</p>
@@ -79,7 +95,7 @@
                 </div><br>
         
                 <div class="">
-                    <a href="cbtexam.html">
+                    <a href="../Student/cbtexam.php">
                        <div class="flex gap-2 justify-center items-center -ml-12 cursor-pointer">
                             <img class="w-[30px] h-[30px]" src="../../Helpers/asset/exam.png" alt="dashboard-image">
                             <p class="text-xl hover:font-[700] hover:text-2xl font-[500] text-white" >Exam</p>
@@ -89,7 +105,7 @@
                 </div><br>
         
                 <div class="">
-                    <a href="view-result-by-student.html">
+                    <a href="../Student/view-result-by-student.php">
                        <div class="flex gap-2 justify-center items-center -ml-8 cursor-pointer">
                             <img class="w-[30px] h-[30px]" src="../../Helpers/asset/score.png" alt="dashboard-image">
                             <p class="text-xl hover:font-[700] hover:text-2xl font-[500] text-white" >Results</p>
@@ -100,7 +116,7 @@
                 
                 <div class="flex justify-center ml-[-40px] gap-2 items-center">
                     <img class="w-6 h-6" src="../../Helpers/asset/exit (1).png" alt="exit">
-                    <a href="#" class="text-white  hover:font-[700] hover:text-xl font-[700]">Logout</a>
+                    <a href="../Student/logout.php" class="text-white  hover:font-[700] hover:text-xl font-[700]">Logout</a>
                 </div>
             </div>
         </div>
@@ -131,10 +147,10 @@
                        <img class="w-6 h-6 cursor-pointer" src="../../Helpers/asset/notification.png" alt="notification">
                    </div>
 
-                   <div class="flex gap-4 items-center">
-                      <img class="w-8 h-8  cursor-pointer rounded-[50px]" src="../../Helpers/asset/fantasy-domik-.jpg" alt="">
-                      <b>Adekoya Adegbenga</b>
-                   </div>
+                   <div class="text-center">
+                        <b><?php echo $mySurname; ?></b>
+                        <p>Student</p>
+                    </div>
                     
                 </div>
             </div><br class="hidden md:block">
