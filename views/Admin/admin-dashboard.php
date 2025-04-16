@@ -152,7 +152,26 @@ $mySession= $_SESSION['username'];
                     <div class="md:w-[250px] w-[100%] h-[150px] bg-[#F97903] text-white rounded-md shadow-md">
                         <h1 class="text-2xl font-[500] text-center pt-8">Total Teachers</h1><br>
                         <div class="flex gap-2 justify-center">
-                            <b class="text-4xl">250</b>
+                            <b class="text-4xl">
+
+                                <?php
+                                    include "../../controllers/connection.php";
+                                    // $query="SELECT * FROM admin_addteacher WHERE email='$email'";   
+                                    // SQL query to count rows
+                                    $query = "SELECT COUNT(*) as total FROM admin_addteacher";
+                                    $result = mysqli_query($conn, $query);
+                                    $row=mysqli_num_rows($result);
+
+                                    if ($row>0) {
+                                        // Fetch the result
+                                        $data = mysqli_fetch_assoc($result);
+                                        // Output the total number of rows
+                                        echo $data['total'];
+                                    }
+                                    
+                                ?>
+
+                            </b>
                             <img class="w-6 h-6 mt-2" src="../../Helpers/asset/lecture.png" alt="dashboard-image">
                         </div>
                     </div>
@@ -160,7 +179,24 @@ $mySession= $_SESSION['username'];
                     <div class="md:w-[250px] w-[100%] h-[150px] bg-[#F97903] text-white rounded-md shadow-md">
                         <h1 class="text-2xl font-[500] text-center pt-8">Total Students</h1><br>
                         <div class="flex gap-2 justify-center">
-                            <b class="text-4xl">25,000</b>
+                            <b class="text-4xl">
+                                <?php
+                                    include "../../controllers/connection.php";
+                                    // $query="SELECT * FROM admin_addteacher WHERE email='$email'";   
+                                    // SQL query to count rows
+                                    $query = "SELECT COUNT(*) as total FROM teacher_addstudent";
+                                    $result = mysqli_query($conn, $query);
+                                    $row=mysqli_num_rows($result);
+
+                                    if ($row>0) {
+                                        // Fetch the result
+                                        $data = mysqli_fetch_assoc($result);
+                                        // Output the total number of rows
+                                        echo $data['total'];
+                                    }
+                                    
+                                ?>
+                            </b>
                             <img class="w-6 h-6 mt-2" src="../../Helpers/asset/scholar.png" alt="dashboard-image">
                         </div>
                     </div>
@@ -168,7 +204,24 @@ $mySession= $_SESSION['username'];
                     <div class="md:w-[250px] w-[100%] h-[150px] bg-[#F97903] text-white rounded-md shadow-md">
                         <h1 class="text-2xl font-[500] text-center pt-8">Total Parents</h1><br>
                         <div class="flex gap-2 justify-center">
-                            <b class="text-4xl">1000</b>
+                            <b class="text-4xl">
+                                <?php
+                                    include "../../controllers/connection.php";
+                                    // $query="SELECT * FROM admin_addteacher WHERE email='$email'";   
+                                    // SQL query to count rows
+                                    $query = "SELECT COUNT(*) as total FROM teacher_addguardian";
+                                    $result = mysqli_query($conn, $query);
+                                    $row=mysqli_num_rows($result);
+
+                                    if ($row>0) {
+                                        // Fetch the result
+                                        $data = mysqli_fetch_assoc($result);
+                                        // Output the total number of rows
+                                        echo $data['total'];
+                                    }
+                                    
+                                ?>
+                            </b>
                             <img class="w-6 h-6 mt-2" src="../../Helpers/asset/family.png" alt="pic">
                         </div>
                     </div>
@@ -176,7 +229,24 @@ $mySession= $_SESSION['username'];
                     <div class="md:w-[250px] w-[100%] h-[150px] bg-[#F97903] text-white rounded-md shadow-md">
                         <h1 class="text-2xl font-[500] text-center pt-8">Current Staff</h1><br>
                         <div class="flex gap-2 justify-center">
-                            <b class="text-4xl">300</b>
+                            <b class="text-4xl">
+                                <?php
+                                    include "../../controllers/connection.php";
+                                    // $query="SELECT * FROM admin_addteacher WHERE email='$email'";   
+                                    // SQL query to count rows
+                                    $query = "SELECT COUNT(*) as total FROM admin_addteacher";
+                                    $result = mysqli_query($conn, $query);
+                                    $row=mysqli_num_rows($result);
+
+                                    if ($row>0) {
+                                        // Fetch the result
+                                        $data = mysqli_fetch_assoc($result);
+                                        // Output the total number of rows
+                                        echo $data['total'];
+                                    }
+                                    
+                                ?>
+                            </b>
                             <img class="w-6 h-6 mt-2" src="../../Helpers/asset/team (2).png" alt="dashboard-image">
                         </div>
                     </div><br class="md:hidden">

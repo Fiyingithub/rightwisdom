@@ -264,6 +264,8 @@ $mySession= $_SESSION['username'];
                                     <th class=" border pr-20 py-2"style="border-left: none; border-right: none;">Home Address</th>
                                 </tr>
 
+                                
+
                                 <?php
                                     include "../../controllers/connection.php";
                                     // $query="SELECT * FROM admin_addteacher WHERE email='$email'";   

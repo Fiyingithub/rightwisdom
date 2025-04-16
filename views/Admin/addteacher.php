@@ -97,7 +97,7 @@ $mySession= $_SESSION['username'];
                      <img class="w-6 h-6" src="../../Helpers/asset/exam (2).png" alt="exit">
                      <a href="../Admin/view-all-result-for-admin.php" class="text-white text-xl  hover:font-[700] hover:text-2xl font-[700]">Result</a>
                      <img class="w-[18px] mt-[5px] ml-10 h-[18px] rounded-[50px] font-[700] bg-white" src="../../Helpers/asset/greater-than.png" alt="greater-than">
-                 </div><br>
+                  </div><br>
                  
                  <div class="flex justify-center ml-[-70px] gap-2 items-center">
                      <img class="w-6 h-6" src="../../Helpers/asset/exit (1).png" alt="exit">
@@ -285,8 +285,7 @@ $mySession= $_SESSION['username'];
 
 
         function generateCalendar(year, month) {
-        const monthNames = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"];
+        const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
         
         const daysInMonth = new Date(year, month, 0).getDate();
         const firstDayOfMonth = new Date(year, month - 1, 1).getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday

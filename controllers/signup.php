@@ -12,16 +12,26 @@ if (isset($_POST['signup'])){
     if($confirmPassword != $password){
         echo "<script>alert('Password does not match')</script>";
     }
+    // Hashing Password
+    $hashpassword = password_hash($password, PASSWORD_BCRYPT);
 
+    // How to validate Gender
+    // $gender = mysqli_real_escape_string($conn,$_POST['option']);
+    // $valid_gender = ['male','female','custom'];
+    //if(!in_array($gender, $valid_gender)){
+    //    die("invalid gender value");
+    //} 
+
+    // NOTE: In the database the gender value  must be eNum['male','female','custom']
  
-    $checkQuery = "SELECT * FROM admin_signup WHERE email = '$email' AND password = '$password'";
+    $checkQuery = "SELECT * FROM admin_signup WHERE email = '$email' ";
     $checkResult = mysqli_query($conn, $checkQuery);
     $checkRows = mysqli_num_rows($checkResult);
 
     if($checkRows > 0){
         echo "<script>alert('Account already exist'); window.location = '../views/adminlogin.html'</script>";
     }else{
-        $sql = "INSERT INTO admin_signup(firstname,surname,username,email,password) VALUE ('$firstname','$surname','$username','$email','$password')";
+        $sql = "INSERT INTO admin_signup(firstname,surname,username,email,password) VALUE ('$firstname','$surname','$username','$email','$hashpassword')";
         $result = mysqli_query($conn, $sql);
         if($result){
             echo "<script>alert('Account Created Successfully'); window.location = '../views/adminlogin.html'</script>";
